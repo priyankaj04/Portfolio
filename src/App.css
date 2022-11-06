@@ -1,38 +1,472 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mukta:wght@300&family=Playfair+Display&family=Roboto+Mono&family=Satisfy&family=Secular+One&display=swap');
+
+*{
+  color: white;
+  overflow-y: hidden;
+}
+
+.Background{
+  height: 100vh;
+  width: 100%;
+  background-color: #171717;
+}
+
+.Avatar{
+  background-image: url('./Images/FullAvatar2.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  position:static;
+  width: 450px;
+  height: 600px;
+  margin-top: 0px;
+}
+/* 
+.Shadow{
+  background-color: black;
+  width: 190px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 290px;
+  filter:blur(15px);
+} */
+
+.Home{
+  display: flex;
+  justify-content: center;
+  font-family: 'Mukta', sans-serif;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  bottom: 0;
+  left: 40px;
+}
+
+.greet{
+  font-size: 35px;
+  display: flex;
+  font-family: 'Mukta', sans-serif;
+  margin-left: 10px;
+}
+
+.greetings{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin-left: 5px;
+  animation: animate 2s linear infinite;
+  background: -webkit-linear-gradient(180deg, #8EC5FC, #E0C3FC,#8EC5FC);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.NavBar{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.NavBar-Container{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 20px;
+}
+
+.particles {
+  position: static;
+  /* z-index: 1; */
+}
+
+.Norm{
+  text-decoration: none;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.Effects {
+  padding: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.h{
+  border-bottom:3px solid #06beb6;
+}
+
+.s{
+  border-bottom: 3px solid #dd5e89;
+}
+
+.p{
+  border-bottom: 3px solid #185a9d;
+}
+
+.c{
+  border-bottom: 3px solid #de6262;
+}
+
+.Profile {
+  background-image: url("./Images/Avatar4.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.homeContent-Border{
+  width: 650px;
+  height: 300px;
+  background: linear-gradient(90deg, #00DBDE, #FC00FF,#00DBDE);
+  animation: animate 2s linear infinite;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  margin-Top: 20px;
+}
+
+.homeContent-Background{
+  background-color: #171717;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  font-family: 'Kanit', sans-serif;
+  font-size: 20px;
+}
+
+@keyframes animate{
+  0%{
+    background-position-x:0;
+  }
+  100%{
+    background-position-x:700px;
+  }
+}
+
+.typingFormate{
+  position: relative;
+}
+
+.typingFormate::before,
+.typingFormate::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 29%;
+}
+
+.typingFormate::before{
+  left: 270px;
+  background-color: #171717;
+  border-left: 2px solid white;
+  animation: typing 3s steps(12)  forwards;
+}
+
+@keyframes typing {
+  100%{
+    left: 70%;
+    background-color: transparent;
+  }
+  99%{
+    background-color: #171717;
+  }
+}
+
+.Home-Content{
+  margin-top: 100px;
+}
+
+.Skills{
+  position: absolute;
+}
+
+.Card-Container{
+  margin-top: 100px;
+  width: 100vw;
+  overflow-y: hidden;
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+  scroll-behavior: smooth;
+}
+
+.Card-Container::before{
+  content: "Skills";
+  opacity: 0.2;
+  font-size: 250px;
+  position: absolute;
+  top: -70px;
+  left: 20px;
+  font-family: 'Secular One', sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Card-Container::-webkit-scrollbar {
+  display: none;
+} 
+
+.Card-Container1{
+  display: flex;
+  justify-content: space-around;
+  width: 2400px;
+  color: black;
+  height: 300px;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Card{
+  transition: transform 0.5s ease-in-out;
+  width: 300px;
+  height: 280px;
+  border-radius: 20px;
+  transform: scale(1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.one{
+  background: linear-gradient(62deg ,#8EC5FC,#E0C3FC);
+}
+
+.two{
+  background: linear-gradient(45deg ,#85FFBD,#FFFB7D);
+}
+
+.three{
+  background: linear-gradient(0deg ,#FFDEE9,#B5FFFC);
+}
+
+.four{
+  background: linear-gradient(62deg ,#FBAB7E,#F7CE68);
+}
+
+.five{
+  background: linear-gradient(19deg ,#FAACA8,#DDD6F3);
+}
+
+.six{
+  background: linear-gradient(90deg ,#74EBD5,#9FACE6);
+}
+.Card:hover{
+  transform: scale(1.05);
+  background: white;
+}
+
+h2{
+  font-family: 'Kanit', sans-serif;
+  color: black;
+  text-align: center;
+}
+
+ul li{
+  list-style-type: square;
+}
+
+li{
+  list-style-type: square;
+  font-family: 'Roboto Mono', monospace;
+  color: black;
+  text-align: left;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+.About{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.quote-container{
+  font-family: 'Satisfy', cursive;
+  font-size: 35px;
+}
+
+.quote{
+  width: 800px;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 250px;
+}
+
+.about-container, .about-container::after{
+  margin-top: 0px;
+  margin-left: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-content{
+  font-family: 'Roboto Mono', monospace;
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 7px;
+  width: 90%;
+}
+
+.Avatar1{
+  background-image: url('./Images/Avatar4.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  width: 370px;
+  height: 400px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.Project{
+  position: absolute;
+}
+
+.Project::before{
+  content: "Project";
+  opacity: 0.2;
+  font-size: 250px;
+  position: absolute;
+  top: -70px;
+  left: 20px;
+  font-family: 'Secular One', sans-serif;
+  text-align: center;
+}
+
+.project-Content{
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 500px;
+  margin-top: 120px;
+}
+
+.ProjectContainer{
+  width: 400px;
+  height: 600px;
+  z-index: 1;
+}
+
+.image1{
+  background-image: url('../src/Images/balanced.png');
+  width: 100%;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.image2{
+  background-image: url('../src/Images/RandomAPI.png');
+  width: 100%;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.image3{
+  background-image: url('../src/Images/boAtXtendWatch.png');
+  width: 100%;
+  height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.ProjectContent{
+  font-family: 'Roboto Mono', monospace;
+}
+
+.sourceCode{
+  font-family: 'Mukta', sans-serif;
+}
+
+.social-media{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0px;
+}
+
+.social-media-icons{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.linkedin{
+  background: url('../src/Images/linkedin.png');
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
+
+.github{
+  background: url('../src/Images/github.png');
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
+
+.instagram{
+  background: url('../src/Images/instagram.png');
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
+
+.divider{
+  width: 37px;
+  height: 200px;
+  border-right: 3px solid white;
+}
+
+.Contact-Content{
+  background-color: rgba(206, 206, 206, 0.8);
+  width: 400px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  border-radius: 25px;
+  box-shadow: 6px 6px 10px rgba(255, 255, 255, 0.2);
+}
+
+.Contact{
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.submit{
+  margin: 100px;
+  font-family: 'Roboto Mono', monospace;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Resume{
+  width: 150px;
+  height: 50px;
+  margin-left: 100px;
+  margin-top: 30px;
+  background: linear-gradient(225deg, #FF3CAC, #784BA0, #2B86C5);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
 }

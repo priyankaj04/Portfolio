@@ -17,6 +17,7 @@ function Skills() {
     await console.log(container);
   }, []);
   var fullWidth = '1100'
+  console.log("its path", window.location.pathname);
 
   const slideLeft = () => {
     var slider = document.getElementById('slider');

@@ -536,22 +536,23 @@ li{
 
 @media only screen and (max-width: 1000px) {
   *{
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
 
   .Background{
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
   }
 
   .Home{
     display: flex;
     flex-direction: column;
     font-size: 20px;
-    height: 600px;
+    height: 100vh;
     width: 100%;
     position: static;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
 
@@ -570,7 +571,7 @@ li{
 
   .homeContent-Border {
     width: 90%;
-    height: auto;;
+    height: auto;
   }
 
   .homeContent-Background{
@@ -602,11 +603,12 @@ li{
   }
 
   .Avatar{
-    width: 100%;
-    height: 300px;
+    width: 100vw;
+    height: 67%;
     background-image: url('./Images/FullAvatar2.png');
-  background-size:contain;
-  background-repeat: no-repeat;
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin-top: 0;
   }
 
   .Project{

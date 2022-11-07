@@ -111,10 +111,10 @@ function Home() {
                     <motion.div className='homeContent-Border '>
                         <div className='homeContent-Background'>
                             <motion.div>
-                                <motion.p className='typingFormate' style={{ textAlign: 'center', fontSize: 50, marginBottom: 5 }}>I'm Priyanka</motion.p>
+                                <motion.p className='typingFormate' style={{ textAlign: 'center',  marginBottom: 5 }}>I'm Priyanka</motion.p>
                                 <motion.p style={{ fontSize: 26, textAlign: 'center', margin: 2 }}>Full-Stack Web Developer</motion.p>
                             </motion.div>
-                            <motion.p style={{ textAlign: 'left', margin: 20, fontSize: 30, fontFamily: 'Roboto Mono', }}>I code because it's fun to build things using computer language.</motion.p>
+                            <motion.p className="homeDescription" style={{ textAlign: 'left', margin: 20, fontFamily: 'Roboto Mono', }}>I code because it's fun to build things using computer language.</motion.p>
                         </div>
                     </motion.div>
                 </motion.div>

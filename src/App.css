@@ -151,6 +151,7 @@
 
 .typingFormate{
   position: relative;
+  font-size: 50px;
 }
 
 .typingFormate::before,
@@ -525,4 +526,106 @@ li{
 .rightButton{
   right: 0;
   top: 55%;
+}
+
+.homeDescription{
+  font-size: 30;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  *{
+    overflow: visible;
+  }
+
+  .Background{
+    height: 100%;
+    width: 100%;
+  }
+
+  .Home{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    height: 600px;
+    width: 100%;
+    position: static;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .Home-Content{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .greet{
+    font-size: 30px;
+  }
+
+  .homeContent-Border {
+    width: 90%;
+    height: auto;;
+  }
+
+  .homeContent-Background{
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .typingFormate::before{
+    display: none;
+  }
+
+  .typingFormate{
+    font-size: 30px;
+  }
+
+  .homeDescription{
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .NavBar-Container{
+    display: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+  }
+
+  .Avatar{
+    width: 100%;
+    height: 300px;
+    background-image: url('./Images/FullAvatar2.png');
+  background-size:contain;
+  background-repeat: no-repeat;
+  }
+
+  .Project{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .project-Content{
+    width: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .ProjectContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }

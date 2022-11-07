@@ -16,7 +16,17 @@ function Skills() {
   const particlesLoaded = useCallback(async container => {
     await console.log(container);
   }, []);
-  
+  var fullWidth = '1100'
+
+  const slideLeft = () => {
+    var slider = document.getElementById('slider');
+    slider.scrollLeft = slider.scrollLeft - fullWidth;
+  }
+
+  const slideRight = () => {
+    var slider = document.getElementById('slider');
+    slider.scrollLeft = slider.scrollLeft + fullWidth;
+  }
 
   return (
     <>
@@ -90,10 +100,13 @@ function Skills() {
           },
           detectRetina: true,
         }} />
-      <motion.div className='Skills' animate={{x:0}} initial={{x:2000}}>
-        <div className="Card-Container">
-          <div className='Card-Container1'>
-            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.1}} className='Card one'>
+      <motion.div className='Skills' animate={{ x: 0 }} initial={{ x: 2000 }}>
+        <button class="leftButton" onClick={slideLeft}><span class="material-symbols-outlined">
+          arrow_back_ios
+        </span></button>
+        <div id='slider' className="Card-Container">
+          <div  className='Card-Container1' >
+            <motion.div whileInView={{ scale: 1 }} initial={{ scale: 0 }} transition={{ delay: 0.1 }} className='Card one'>
               <h2>Programming Languages</h2>
               <ul>
                 <li>C</li>
@@ -102,7 +115,7 @@ function Skills() {
                 <li>Python</li>
               </ul>
             </motion.div>
-            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.1}} className='Card two'>
+            <motion.div whileInView={{ scale: 1 }} initial={{ scale: 0 }} transition={{ delay: 0.1 }} className='Card two'>
               <h2>Web Technologies</h2>
               <ul>
                 <li>HTML</li>
@@ -112,7 +125,7 @@ function Skills() {
                 <li>GraphQL</li>
                 <li>GraphCMS</li></ul>
             </motion.div>
-            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.1}} className='Card three'>
+            <motion.div whileInView={{ scale: 1 }} initial={{ scale: 0 }} transition={{ delay: 0.1 }} className='Card three'>
               <h2>Libraries</h2>
               <ul>
                 <li>React JS</li>
@@ -121,7 +134,7 @@ function Skills() {
                 <li>Material UI</li>
               </ul>
             </motion.div>
-            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.4}} className='Card four'>
+            <motion.div whileInView={{ scale: 1 }} initial={{ scale: 0 }} transition={{ delay: 0.4 }} className='Card four'>
               <h2>FrameWorks</h2>
               <ul>
                 <li>Express JS</li>
@@ -131,14 +144,14 @@ function Skills() {
                 <li>SASS</li>
               </ul>
             </motion.div>
-            <motion.div whileInView={{scale:1}} initial={{scale:0}} className='Card five'>
+            <motion.div whileInView={{ scale: 1 }} initial={{ scale: 0 }} className='Card five'>
               <h2>Database Management</h2>
               <ul>
                 <li>SQL</li>
                 <li>MongoDB</li>
               </ul>
             </motion.div>
-            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.1}} className='Card six'>
+            <motion.div whileInView={{ scale: 1 }} initial={{ scale: 0 }} transition={{ delay: 0.1 }} className='Card six'>
               <h2>Others</h2>
               <ul>
                 <li>Linux/Unix</li>
@@ -146,8 +159,13 @@ function Skills() {
                 <li>Object-Oriented Programming</li>
                 <li>DataStructure and Algorithm</li>
               </ul>
-            </motion.div></div>
+            </motion.div>
+          </div>
         </div>
+        <button onClick={slideRight} className="rightButton"><span class="material-symbols-outlined">
+          arrow_forward_ios
+        </span>
+        </button>
       </motion.div>
     </>
   )

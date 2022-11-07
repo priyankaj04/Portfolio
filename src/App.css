@@ -502,3 +502,27 @@ li{
   justify-content: center;
   font-family: 'Roboto Mono', monospace;
 }
+
+.leftButton, .rightButton{
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(225deg, #FF3CAC, #784BA0, #2B86C5);
+  box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+  cursor:pointer;
+}
+
+.leftButton{
+  left: 0;
+  top: 55%;
+}
+
+.rightButton{
+  right: 0;
+  top: 55%;
+}

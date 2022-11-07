@@ -6,7 +6,7 @@ import '../App.css'
 
 function Skills() {
   const particlesInit = useCallback(async engine => {
-    console.log(engine);
+    //console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
@@ -16,6 +16,7 @@ function Skills() {
   const particlesLoaded = useCallback(async container => {
     await console.log(container);
   }, []);
+  
 
   return (
     <>
@@ -89,10 +90,10 @@ function Skills() {
           },
           detectRetina: true,
         }} />
-      <div className='Skills'>
+      <motion.div className='Skills' animate={{x:0}} initial={{x:2000}}>
         <div className="Card-Container">
           <div className='Card-Container1'>
-            <div className='Card one'>
+            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.1}} className='Card one'>
               <h2>Programming Languages</h2>
               <ul>
                 <li>C</li>
@@ -100,8 +101,8 @@ function Skills() {
                 <li>Java</li>
                 <li>Python</li>
               </ul>
-            </div>
-            <div className='Card two'>
+            </motion.div>
+            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.1}} className='Card two'>
               <h2>Web Technologies</h2>
               <ul>
                 <li>HTML</li>
@@ -110,8 +111,8 @@ function Skills() {
                 <li>Node JS</li>
                 <li>GraphQL</li>
                 <li>GraphCMS</li></ul>
-            </div>
-            <div className='Card three'>
+            </motion.div>
+            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.1}} className='Card three'>
               <h2>Libraries</h2>
               <ul>
                 <li>React JS</li>
@@ -119,8 +120,8 @@ function Skills() {
                 <li>JQuery</li>
                 <li>Material UI</li>
               </ul>
-            </div>
-            <div className='Card four'>
+            </motion.div>
+            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.4}} className='Card four'>
               <h2>FrameWorks</h2>
               <ul>
                 <li>Express JS</li>
@@ -129,15 +130,15 @@ function Skills() {
                 <li>Tailwind CSS</li>
                 <li>SASS</li>
               </ul>
-            </div>
-            <div className='Card five'>
+            </motion.div>
+            <motion.div whileInView={{scale:1}} initial={{scale:0}} className='Card five'>
               <h2>Database Management</h2>
               <ul>
                 <li>SQL</li>
                 <li>MongoDB</li>
               </ul>
-            </div>
-            <div className='Card six'>
+            </motion.div>
+            <motion.div whileInView={{scale:1}} initial={{scale:0}} transition={{delay:0.1}} className='Card six'>
               <h2>Others</h2>
               <ul>
                 <li>Linux/Unix</li>
@@ -145,9 +146,9 @@ function Skills() {
                 <li>Object-Oriented Programming</li>
                 <li>DataStructure and Algorithm</li>
               </ul>
-            </div></div>
+            </motion.div></div>
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }

@@ -22,7 +22,7 @@ function Home() {
 
 
     const particlesInit = useCallback(async engine => {
-        console.log(engine);
+        //console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
         // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
         // starting from v2 you can add only the features you need reducing the bundle size
@@ -105,8 +105,8 @@ function Home() {
                     },
                     detectRetina: true,
                 }} />
-            <motion.div className='Home'>
-                <motion.div className='Home-Content' >
+            <motion.div className='Home' animate={{scale:1, x: 0}} initial={{scale:0, x: -100}}>
+                <motion.div className='Home-Content' animate={{x:0}} initial={{x:-1000}}>
                     <motion.div className="greet">Hi,<div className='greetings'>{greetings(time)}!</div></motion.div>
                     <motion.div className='homeContent-Border '>
                         <div className='homeContent-Background'>
@@ -118,7 +118,7 @@ function Home() {
                         </div>
                     </motion.div>
                 </motion.div>
-                <motion.div className='Avatar' />
+                <motion.div className='Avatar' animate={{x:0}} initial={{x: 1000}} />
             </motion.div>
         </>
     )

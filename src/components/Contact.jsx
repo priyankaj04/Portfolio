@@ -1,15 +1,21 @@
-import { React, useCallback } from 'react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import emailjs from '@emailjs/browser';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 import '../App.css'
 
 function Contact() {
 
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
   const particlesInit = useCallback(async engine => {
-    console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
@@ -19,6 +25,32 @@ function Contact() {
   const particlesLoaded = useCallback(async container => {
     await console.log(container);
   }, []);
+
+  const [open, setOpen] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_tr4280p', 'template_h1u3a07', form.current, 'JR35GHpW2jnOQg_4A')
+      .then((result) => {
+        //console.log(result.text);
+        setOpen(true);
+        setSuccess(true);
+      }, (error) => {
+        //console.log(error.text);
+        setOpen(true);
+        setSuccess(false);
+      });
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
 
   return (
     <>
@@ -92,45 +124,58 @@ function Contact() {
           },
           detectRetina: true,
         }} />
-      <div>
-        <div className="Contact">
+      <div><form ref={form} onSubmit={sendEmail}>
+        <motion.div className="Contact" animate={{scale:1}} initial={{scale: 2}}>
           <div className="Contact-Content">
-          <h2 style={{margin:'10px'}}>Say Hi!</h2>
-          <TextField
-          required
-          color="success"
-          id="filled-required"
-          variant='filled'
-          label="Name"
-          style={{width:'300px'}}
-        />
-        <TextField
-          required
-          color="success"
-          id="filled-required"
-          variant='filled'
-          label="Email"
-          style={{width:'300px'}}
-        />
-        <TextField
-          id="filled-multiline-static"
-          label="Message"
-          multiline
-          color="success"
-          variant='filled'
-          rows={7}
-          style={{width:'300px'}}
-        />
-          </div>
-          <div className='submit'>
-          <Button variant="contained" style={{marginLeft: '100px', width:'150px'}}>Submit</Button>
-          <a href="./src/Images/PriyankaJ.pdf" download style={{textDecoration:'none'}}>
-          <div className='Resume'><span class="material-symbols-outlined">
-          download
-          </span>
-          <p style={{textDecoration: 'none'}}>Resume</p></div></a>
-          </div>
-        </div>
+          <motion.div animate={{y:0}} initial={{y:1000}} transition={{delay:0.1}}>
+            <h2 style={{ marginBottom: '0px', fontSize: 30, fontWeight: 700 }} >Get in Touch!</h2></motion.div>
+            <motion.div animate={{x:0}} initial={{x:1000}} transition={{delay:0.05}}>
+            <TextField
+              required
+              color="success"
+              id="filled-required"
+              variant='filled'
+              label="Name"
+              style={{ width: '300px' }}
+              name="user_name"
+              
+            /></motion.div>
+            <motion.div animate={{x:0}} initial={{x:1000}} transition={{delay:0.1}}>
+            <TextField
+              required
+              color="success"
+              id="filled-required"
+              variant='filled'
+              label="Email"
+              style={{ width: '300px' }}
+              name="user_email"
+            /></motion.div>
+            <motion.div animate={{x:0}} initial={{x:1000}} transition={{delay:0.15}}>
+            <TextField
+              id="filled-multiline-static"
+              label="Message"
+              multiline
+              color="success"
+              variant='filled'
+              rows={7}
+              style={{ width: '300px' }}
+              name="message"
+            /></motion.div>
+            </div>
+            <motion.div animate={{x:0}} initial={{x:-1000}} transition={{delay:0.1}}>
+            <button type="submit" className="submit" value="send" variant="contained" style={{ width: '150px', cursor:"pointer", height: "50px", fontSize:18 }}><p>Submit</p></button></motion.div>
+          <Snackbar open={open && success} autoHideDuration={5000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+              Message send!
+            </Alert>
+          </Snackbar>
+          <Snackbar open={open && !success} autoHideDuration={5000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+              Message was not able to send, Try after sometime!
+            </Alert>
+          </Snackbar>
+        </motion.div>
+      </form>
         <div>
           <div className="social-media">
             <div className='social-media-icons'>

@@ -217,9 +217,10 @@
   justify-content: space-around;
   width: 2400px;
   color: black;
-  height: 300px;
+  height: 400px;
   align-items: center;
 }
+
 
 .Card{
   transition: transform 0.5s ease-in-out;
@@ -448,13 +449,44 @@ li{
   bottom: 0;
   right: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
+.Contact::before{
+  content:"Say Hi!";
+  opacity: 0.2;
+  font-size: 250px;
+  position: absolute;
+  top: 0px;
+  left: 200px;
+  font-family: 'Secular One', sans-serif;
+  text-align: center;
+}
+
 .submit{
-  margin: 100px;
   font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(225deg, #FF3CAC, #784BA0, #2B86C5);
+  text-align: center;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: 700;
+  border: none
+}
+
+.submit:hover{
+  font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(225deg, #ff4bb1, #8154a8, #3a87be);
+  text-align: center;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: 700;
+  transform: scale(1.02);
 }
 
 .Resume{

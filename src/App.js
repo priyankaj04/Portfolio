@@ -1,6 +1,5 @@
 import { React, Fragment } from 'react';
-import { AnimatePresence } from "framer-motion";
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -12,7 +11,7 @@ import './App.css';
 function App() {
   return (
     <Fragment>
-    <BrowserRouter>
+    <HashRouter>
         <div className='Background'>
         <NavBar />
           <Routes>
@@ -23,7 +22,7 @@ function App() {
             <Route path='/contact' element={<Contact />} />
           </Routes>
         </div>
-        </BrowserRouter>
+        </HashRouter>
     </Fragment>
   );
 }

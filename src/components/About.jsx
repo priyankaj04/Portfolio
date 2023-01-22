@@ -109,7 +109,7 @@ function About() {
                             </div>
                         </div>
                     </div>
-                    <a href="./src/Images/PriyankaJ.pdf" download style={{ textDecoration: 'none', margin:"0", alignItems:"center" }}>
+                    <a href="./src/Images/Resume.pdf" download style={{ textDecoration: 'none', margin:"0", alignItems:"center" }}>
                         <div className='Resume'><span class="material-symbols-outlined">
                             download
                         </span>

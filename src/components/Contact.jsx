@@ -161,11 +161,11 @@ function Contact() {
               name="message"
             /></motion.div>
             </div>
-            <motion.div animate={{x:0}} initial={{x:-1000}} transition={{delay:0.1}}>
+            <motion.div animate={{x:0}} initial={{x:-1000}} transition={{delay:0.1}} style={{width: '250px', display: 'flex', justifyContent: 'center', height: '100px', alignItems: 'center'}}>
             <button type="submit" className="submit" value="send" variant="contained" style={{ width: '150px', cursor:"pointer", height: "50px", fontSize:18 }}><p>Submit</p></button></motion.div>
           <Snackbar open={open && success} autoHideDuration={5000} onClose={handleClose}>
             <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-              Message send!
+              Message sent!
             </Alert>
           </Snackbar>
           <Snackbar open={open && !success} autoHideDuration={5000} onClose={handleClose}>
